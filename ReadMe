@@ -63,11 +63,11 @@ Structured JSON Output
 
 ## 3. Features
 
-### ✅ Header Row Detection
+### Header Row Detection
 
 Automatically identifies the true header row even if the sheet contains title rows above it.
 
-### ✅ Fuzzy Column Mapping
+### Fuzzy Column Mapping
 
 Maps abbreviated headers like:
 
@@ -81,7 +81,7 @@ to canonical parameters:
 * `steam_generation`
 * `efficiency`
 
-### ✅ Multi-Asset Support
+###   Multi-Asset Support
 
 Supports Excel files where:
 
@@ -94,7 +94,7 @@ Example:
 Coal AFBC-1 | Coal AFBC-2
 ```
 
-### ✅ Robust Value Parsing
+###   Robust Value Parsing
 
 Converts:
 
@@ -102,7 +102,7 @@ Converts:
 * `"90%"` → `0.9`
 * `"--"` → `null`
 
-### ✅ Validation & Data Quality Checks
+###   Validation & Data Quality Checks
 
 Flags:
 
@@ -111,7 +111,7 @@ Flags:
 * Missing asset metadata
 * Null critical parameters
 
-### ✅ Human Review Detection
+###   Human Review Detection
 
 If:
 
