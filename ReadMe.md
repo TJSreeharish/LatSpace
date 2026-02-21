@@ -20,7 +20,7 @@ Industrial ESG (Environmental, Social, and Governance) data is notoriously messy
 
 ## 🎥 Demo Video
 
-👉 Watch the full demo here:  
+ Watch the full demo here :  
 https://github.com/user-attachments/assets/643636c8-c5b2-4ec7-95b7-b71ba32ee84d
 ---
 
@@ -108,17 +108,7 @@ docker run -p 8000:8000 --env-file .env esg-parser
 
 ```
 
----
 
-##  Data Validation Rules
-
-| Parameter | Rule | Action on Violation |
-| --- | --- | --- |
-| `coal_consumption` |  | Warning Flag |
-| `steam_generation` |  | Warning Flag |
-| `efficiency` |  | Warning Flag |
-
----
 
 ##  Example API Response
 
@@ -146,7 +136,7 @@ docker run -p 8000:8000 --env-file .env esg-parser
 
 ---
 
-## Roadmap (Phased Implementation)
+## Roadmap 
 
 ### Phase 1 – Making Production Ready
 
@@ -166,7 +156,7 @@ docker run -p 8000:8000 --env-file .env esg-parser
 
 ---
 
-### Phase 3 – Research Based Topics can be implemented
+### Phase 3 – Research Based Topics 
 
 * [ ] **Neural Turing Machine (Research):** Explore memory-augmented architectures for structured correction and multi-step data reconciliation.
 * [ ] **PDF Support:** Expand ingestion to industrial PDF reports using OCR + structured extraction.
