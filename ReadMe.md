@@ -69,7 +69,7 @@ graph TD
 1. **Clone the repo:**
 ```bash
 git clone https://github.com/your-username/industrial-esg-parser.git
-cd industrial-esg-parser
+cd LatSpace
 
 ```
 
@@ -86,7 +86,7 @@ pip install -r requirements.txt
 3. **Configure API Key:**
 Create a `.env` file in the root directory:
 ```env
-GEMINI_API_KEY=your_key_here
+GEMINI_API_KEY="your_key_here"
 
 ```
 
