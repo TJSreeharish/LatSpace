@@ -5,3 +5,4 @@ pydantic
 python-multipart
 rapidfuzz
 google-genai
+python-dotenv

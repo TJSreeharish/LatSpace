@@ -1,7 +1,44 @@
 from openpyxl import Workbook
+import random
 
 
-def create_multi_asset_excel(filename="multi_asset.xlsx"):
+def random_percentage():
+    base = random.randint(85, 95)
+    # Occasionally inject bad efficiency
+    if random.random() < 0.05:
+        return f"{random.randint(101,110)}%"
+    return f"{base}%"
+
+
+def random_coal():
+    value = random.randint(1100, 1500)
+    # Occasionally inject negative
+    if random.random() < 0.05:
+        return str(-random.randint(100, 500))
+    return f"{value:,}"
+
+
+def random_power():
+    return f"{random.randint(4800, 5200):,}"
+
+
+def random_steam():
+    return str(random.randint(45, 55))
+
+
+def random_remark():
+    remarks = [
+        "Normal",
+        "Stable",
+        "Minor fluctuation",
+        "Check AFBC-1",
+        "",
+        None
+    ]
+    return random.choice(remarks)
+
+
+def create_multi_asset_excel(filename="multi_asset.xlsx", num_rows=50):
     wb = Workbook()
     ws = wb.active
     ws.title = "Multi Asset Data"
@@ -34,21 +71,26 @@ def create_multi_asset_excel(filename="multi_asset.xlsx"):
     ws.append(headers)
 
     # -----------------------------
-    # Data Rows
+    # Generate Random Data
     # -----------------------------
-    data = [
-        ["1,200", "1,150", "1300", "50", "48", "5,000", "4,800", "90%", "88%", "Normal"],
-        ["1,300", "1,180", "1400", "52", "49", "5,100", "4,900", "92%", "89%", "Stable"],
-        ["-400", "1,200", "1500", "51", "50", "5,050", "4,950", "105%", "87%", "Check AFBC-1"],
-        ["1,250", "1,170", "1350", "49", "47", "4,980", "4,820", "89%", "86%", ""],
-    ]
-
-    for row in data:
+    for _ in range(num_rows):
+        row = [
+            random_coal(),
+            random_coal(),
+            random_coal(),
+            random_steam(),
+            random_steam(),
+            random_power(),
+            random_power(),
+            random_percentage(),
+            random_percentage(),
+            random_remark()
+        ]
         ws.append(row)
 
     wb.save(filename)
-    print(f"Multi-asset test file created: {filename}")
+    print(f"Multi-asset test file created with {num_rows} rows: {filename}")
 
 
 if __name__ == "__main__":
-    create_multi_asset_excel()
+    create_multi_asset_excel(num_rows=50)

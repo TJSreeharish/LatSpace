@@ -88,9 +88,7 @@ def process_chunk(chunk, column_mapping):
                 "confidence": confidence
             }
 
-            # ----------------------------
             # Validation Rules
-            # ----------------------------
             if parsed is not None:
 
                 # Coal consumption cannot be negative
@@ -109,15 +107,11 @@ def process_chunk(chunk, column_mapping):
                         "issue": "Efficiency greater than 100%"
                     })
 
-            # ----------------------------
             # Human Review Rule
-            # ----------------------------
             if param_name is None:
-                # Completely unmapped column → always human review
                 human_review_required.append(entry)
 
             elif confidence == "low":
-                # Low confidence mapping → human review
                 human_review_required.append(entry)
 
             else:

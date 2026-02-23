@@ -104,7 +104,7 @@ Access the interactive docs at [http://localhost:8000/docs](https://www.google.c
 
 ```bash
 docker build -t esg-parser .
-docker run -p 8000:8000 --env-file .env esg-parser
+docker run -p 8000:8000  esg-parser
 
 ```
 

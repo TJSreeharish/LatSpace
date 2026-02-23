@@ -1,8 +1,12 @@
 import json
 from google import genai
 from app.models.registries import PARAMETER_REGISTRY, ASSET_REGISTRY
+import os
+from dotenv import load_dotenv
 
-client = genai.Client(api_key="AIzaSyBWIQUVdxoD4h8WJkcwPbs_5Jlx85jxk8U")
+load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY")
+client = genai.Client(api_key=api_key)
 
 def map_headers_with_llm(headers):
 
